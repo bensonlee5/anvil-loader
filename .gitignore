@@ -8,3 +8,5 @@ config/robot_description.urdf
 !.env.config
 
 .android/*
+# Local machine-control helpers may contain hostnames, users, or commands.
+scripts/shutdown-remote-host.sh
