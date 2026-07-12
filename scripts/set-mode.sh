@@ -5,13 +5,16 @@ repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$repo_root"
 
 usage() {
-  printf 'Usage: %s {inference|quest|status}\n' "$0" >&2
+  printf 'Usage: %s {inference|quest|quest-commanded-ee|commanded-ee|status}\n' "$0" >&2
 }
 
 mode="${1:-status}"
 case "$mode" in
   inference|quest)
     ln -sfn ".env.config.$mode" .env.config
+    ;;
+  quest-commanded-ee|commanded-ee)
+    ln -sfn ".env.config.quest-commanded-ee" .env.config
     ;;
   status)
     ;;
